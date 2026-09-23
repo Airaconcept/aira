@@ -747,7 +747,7 @@ async function getServerIP() {
 // 生成 list 和 sub 信息
 async function generateLinks(argoDomain) {
   const ISP = await getMetaInfo();
-  const nodeName = NAME ? `${NAME}-${ISP}` : ISP;
+  const nodeName = NAME || ISP;
   const SERVER_IP = await getServerIP();
 
   return new Promise((resolve) => {
